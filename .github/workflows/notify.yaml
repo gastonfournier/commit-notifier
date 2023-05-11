@@ -23,8 +23,8 @@ jobs:
                         workflow_id: 'react.yaml',
                         ref: 'main',
                         inputs: {
-                            commit: '${{ github.event.head_commit.id }}',
-                            actor: '${{ github.event.head_commit.committer.username }}',
+                            commit: "${{ github.event.head_commit.id }}",
+                            actor: "${{ github.event.head_commit.committer.username }}",
                             message: ${{ toJSON(github.event.head_commit.message) }},
                         }
                     })
