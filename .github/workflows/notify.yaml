@@ -1,0 +1,21 @@
+name: Notify commit to external repo
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+
+jobs:
+    react:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/github-script@v6
+              with:
+                script: |
+                    await github.rest.actions.createWorkflowDispatch({
+                        owner: 'gastonfournier',
+                        repo: 'commit-reactor',
+                        workflow_id: 'react.yaml',
+                        ref: 'main'
+                    })
