@@ -15,7 +15,7 @@ jobs:
                 github-token: ${{ secrets.MY_TOKEN }}
                 result-encoding: string
                 script: |
-                    echo ${{ toJSON(context) }}
+                    echo ${{ toJSON(github) }}
                     await github.rest.actions.createWorkflowDispatch({
                         owner: 'gastonfournier',
                         repo: 'commit-reactor',
