@@ -12,6 +12,7 @@ jobs:
         steps:
             - uses: actions/github-script@v6
               with:
+                github-token: ${{ secrets.MY_TOKEN }}
                 script: |
                     await github.rest.actions.createWorkflowDispatch({
                         owner: 'gastonfournier',
