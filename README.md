@@ -4,3 +4,4 @@ Every commit notifies to https://github.com/gastonfournier/commit-reactor trigge
 
 - Inputs have to be declared in the reactor.
 - Use `toJSON` to properly handle quotes in the commit message
+- Reactor should also handle quotes properly
