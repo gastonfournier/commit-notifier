@@ -13,10 +13,15 @@ jobs:
             - uses: actions/github-script@v6
               with:
                 github-token: ${{ secrets.MY_TOKEN }}
+                result-encoding: string
                 script: |
+                    echo ${{ toJSON(context) }}
                     await github.rest.actions.createWorkflowDispatch({
                         owner: 'gastonfournier',
                         repo: 'commit-reactor',
                         workflow_id: 'react.yaml',
-                        ref: 'main'
+                        ref: 'main',
+                        inputs: {
+
+                        }
                     })
