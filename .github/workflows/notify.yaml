@@ -10,8 +10,6 @@ jobs:
     react:
         runs-on: ubuntu-latest
         steps:
-            - run: |
-                echo "${{ toJSON(github) }}"
             - uses: actions/github-script@v6
               with:
                 github-token: ${{ secrets.MY_TOKEN }}
